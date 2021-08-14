@@ -15,7 +15,7 @@ relay_dictionary = {
     'R13': [19, True], 'R14': [26, True], 'R15': [21, True], 'R16': [20, True],
 }
 
-GPIO.setmod(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 for key in relay_dictionary:
     GPIO.setup(relay_dictionary[key][0], GPIO.OUT, initial=relay_dictionary[key][1])
 
