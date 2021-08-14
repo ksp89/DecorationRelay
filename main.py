@@ -9,15 +9,15 @@ pin_list_dictionary = [2, 3, 4, 17,
                        19, 26, 21, 20]
 
 relay_dictionary = {
-    'R1': [2, False], 'R2': [3, False], 'R3': [4, False], 'R4': [17, False],
-    'R5': [27, False], 'R6': [22, False], 'R7': [10, False], 'R8': [9, False],
-    'R9': [11, False], 'R10': [5, False], 'R11': [6, False], 'R12': [13, False],
-    'R13': [19, False], 'R14': [26, False], 'R15': [21, False], 'R16': [20, False],
+    'R1': [2, True], 'R2': [3, True], 'R3': [4, True], 'R4': [17, True],
+    'R5': [27, True], 'R6': [22, True], 'R7': [10, True], 'R8': [9, True],
+    'R9': [11, True], 'R10': [5, True], 'R11': [6, True], 'R12': [13, True],
+    'R13': [19, True], 'R14': [26, True], 'R15': [21, True], 'R16': [20, True],
 }
 
 GPIO.setmod(GPIO.BCM)
 for key in relay_dictionary:
-    GPIO.setup(relay_dictionary[key][0], GPIO.OUT, initial=GPIO.LOW)
+    GPIO.setup(relay_dictionary[key][0], GPIO.OUT, initial=relay_dictionary[key][1])
 
 
 @app.route('/')
@@ -40,12 +40,12 @@ def manualrelaycontrol():
 
         elif request.form.get('All On') == 'ALL ON':
             for key in relay_dictionary:
-                relay_dictionary[key][1] = True
+                relay_dictionary[key][1] = False
                 GPIO.output(relay_dictionary[key][0], relay_dictionary[key][1])
 
         elif request.form.get('All Off') == 'ALL OFF':
             for key in relay_dictionary:
-                relay_dictionary[key][1] = False
+                relay_dictionary[key][1] = True
                 GPIO.output(relay_dictionary[key][0], relay_dictionary[key][1])
         else:
             pass
