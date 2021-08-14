@@ -15,7 +15,8 @@ relay_dictionary = {
     'R13': [19, False], 'R14': [26, False], 'R15': [21, False], 'R16': [20, False],
 }
 
-GPIO.setup(relay_dictionary[:][0], GPIO.OUT, initial=GPIO.LOW)
+for key in relay_dictionary:
+    GPIO.setup(relay_dictionary[key][0], GPIO.OUT, initial=GPIO.LOW)
 
 
 @app.route('/')
