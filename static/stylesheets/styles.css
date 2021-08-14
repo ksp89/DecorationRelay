@@ -1,0 +1,17 @@
+
+
+
+input[type=submit] {
+    font-size: 125%;
+    width: 100pt;
+    height: 100pt;
+}
+
+
+h2 {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px
+
+}

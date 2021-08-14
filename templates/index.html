@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styles.css') }}">
+    <title>Home Page</title>
+</head>
+    <body>
+        <nav>
+            <ul class="menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('manualrelaycontrol') }}">Relay Control</a></li>
+            </ul>
+        </nav>
+        <h1>
+            This is my home page!
+        </h1>
+
+            <!--
+            <video width="320" height="240" controls>
+                <source src="rtsp://admin:158367@192.168.1.51:554/cam/realmonitor?channel=1&subtype=0" type="">
+            </video>
+            -->
+
+    </body>
+</html>
